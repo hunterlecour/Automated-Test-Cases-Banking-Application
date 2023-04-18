@@ -3,6 +3,7 @@ from selenium.webdriver.firefox.service import Service as Firefox_Service
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from app.application import Application
+from webdriver_manager.firefox import GeckoDriverManager
 
 
 def browser_init(context, test_name):
@@ -10,12 +11,7 @@ def browser_init(context, test_name):
     :param context: Behave context
     """
 
-    # NEW WAYS
-    # CHROME
-    # service = Chrome_Service('C:\\Users\\hunte\\PycharmProjects\\Selenium-Project-Banking-Final\\chromedriver.exe')
-    # context.driver = webdriver.Chrome(service=service)
-    # FIREFOX
-    service = Firefox_Service('C:\\Users\\hunte\\PycharmProjects\\Selenium-Project-Banking-Final\\geckodriver.exe')
+    service = Firefox_Service(executable_path=GeckoDriverManager().install())
     context.driver = webdriver.Firefox(service=service)
 
 

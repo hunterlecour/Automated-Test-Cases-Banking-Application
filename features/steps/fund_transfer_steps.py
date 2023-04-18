@@ -27,9 +27,8 @@ def verify_fund_transfer(context):
 
 
 @then('Verify Page Is Redirecting To Fund Transfer Page')
-def fund_transfer_page(context):
-    context.app.fund_transfer_page.fund_transfer_page()
-    # THIS IS NOT WORKING
+def verify_transfer_page(context):
+    context.app.fund_transfer_page.verify_transfer_page()
 
 
 @then('Verify A Pop - UP {pop_up} is visible')

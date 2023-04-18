@@ -32,10 +32,10 @@ Feature: Verify the Login Section
 
   Scenario: Verify User Can Log Out
     Given Open Bank App
-    When Enter Invalid User ID mdfdsfsf
+    When Enter Valid User ID mngr489998
     And Enter Valid Password tamuhUb
     And Click Login
-    #And Click Logout (THIS IS FAILING)
+    And Click Logout
     Then Verify User Can Log Out
 
 

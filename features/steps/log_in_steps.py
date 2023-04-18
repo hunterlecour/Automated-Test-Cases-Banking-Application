@@ -34,7 +34,6 @@ def login_click(context):
 @when('Click Logout')
 def logout_click(context):
     context.app.login_page.logout_click()
-    # THIS IS FAILING
 
 
 @then('Verify Login Is Successful')

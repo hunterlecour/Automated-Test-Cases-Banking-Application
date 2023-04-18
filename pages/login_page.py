@@ -15,31 +15,23 @@ class Login(Page):
         self.open_url('https://www.demo.guru99.com/V4/')
 
     def login(self, login_input):
-        loginx = self.driver.find_element(*self.LOGIN_INPUT)
-        loginx.clear()
-        loginx.send_keys(login_input)
+        self.input_text(login_input, *self.LOGIN_INPUT)
 
     def login_id_wrong(self, invalid_login_input):
-        in_loginx = self.driver.find_element(*self.LOGIN_INPUT)
-        in_loginx.clear()
-        in_loginx.send_keys(invalid_login_input)
+        self.input_text(invalid_login_input, *self.LOGIN_INPUT)
 
     def password(self, password_input):
-        passwordx = self.driver.find_element(*self.PASSWORD_INPUT)
-        passwordx.clear()
-        passwordx.send_keys(password_input)
+        self.input_text(password_input, *self.PASSWORD_INPUT)
 
     def password_wrong(self, invalid_password_input):
-        in_passwordx = self.driver.find_element(*self.PASSWORD_INPUT)
-        in_passwordx.clear()
-        in_passwordx.send_keys(invalid_password_input)
+        self.input_text(invalid_password_input, *self.PASSWORD_INPUT)
 
     def login_click(self):
-        self.driver.find_element(*self.LOGIN_CLICK).click()
+        self.click(*self.LOGIN_CLICK)
+
 
     def logout_click(self):
-        self.driver.find_element(*self.LOGOUT_CLICK).click()
-        # NOT WORKING
+        self.click(*self.LOGOUT_CLICK)
 
     def verify_login(self):
         expected_result = "Welcome To Manager's Page of Guru99 Bank"
@@ -47,9 +39,10 @@ class Login(Page):
         assert expected_result == actual_result, f'Expected {expected_result} but got actual {actual_result}'
         sleep(1)
         # Taking Screenshot
-        self.driver.get_screenshot_as_file('images/ss1.png')
+        self.driver.get_screenshot_as_file('images/login-test-1.png')
 
     def verify_login_error(self):
+
         # Wait for the alert to appear
         alert = self.driver.wait.until(EC.alert_is_present())
         #  Check if the alert exists
@@ -57,12 +50,18 @@ class Login(Page):
             print("Alert exists")
         else:
             print("Alert does not exist")
-
+        alert.accept()
+        # Taking Screenshot
+        self.driver.get_screenshot_as_file('images/login-test-2.png')
         self.driver.quit()
 
     def verify_logout(self):
         alert = self.driver.wait.until(EC.alert_is_present())
-        text = alert.text
-        print(f"This is the alert: {text}")
-        assert text == 'You Have Successfully Logged Out!!'
+        actual_text = alert.text
+        expected_text = 'You Have Succesfully Logged Out!!'
+        assert expected_text == actual_text,f"Expected alert text not found, but found {actual_text}"
+        alert.dismiss()
+        # Taking Screenshot
+        self.driver.get_screenshot_as_file('images/login-test-3.png')
+        self.driver.quit()
 

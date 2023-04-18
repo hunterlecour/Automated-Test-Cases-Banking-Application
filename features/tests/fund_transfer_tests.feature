@@ -19,7 +19,7 @@ Feature: Verifying Fund Transfers
     And Click Fund Transfer
     And Input Correct Required Fields For Fund Transfer
     And Click Submit
-    # Then Verify Page Is Redirecting To Fund Transfer Page (SUPPORT)
+    Then Verify Page Is Redirecting To Fund Transfer Page
 
   Scenario: Verify system when Manager enters wrong Account number during Fund Transfer
     Given Open Bank App

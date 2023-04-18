@@ -10,19 +10,20 @@ class Withdrawal(Page):
     WITHDRAWAL_SUCCESS = (By.CSS_SELECTOR, 'p.heading3')
 
     def withdrawal_button(self):
-        self.driver.find_element(*self.WITHDRAWAL_BUTTON).click()
-        # THIS IS FAILING
+        self.click(*self.WITHDRAWAL_BUTTON)
 
     def account_number(self, account_number_input):
-        self.driver.find_element(*self.ACCOUNT_NO_FIELD).send_keys(account_number_input)
+        self.input_text(account_number_input, *self.ACCOUNT_NO_FIELD)
 
     def amount_number(self, amount):
-        self.driver.find_element(*self.AMOUNT_FIELD).send_keys(amount)
+        self.input_text(amount, *self.AMOUNT_FIELD)
 
     def withdrawal_desc(self, input):
-        self.driver.find_element(*self.DESCRIPTION_FIELD).send_keys(input)
+        self.input_text(input, *self.DESCRIPTION_FIELD)
 
     def verify_withdrawal(self):
         text = self.driver.find_element(*self.WITHDRAWAL_SUCCESS).text
         assert text == "Transaction details of Withdrawal for Account 121219"
+        # Taking Screenshot
+        self.driver.get_screenshot_as_file('images/withdrawal-test-1.png')
 

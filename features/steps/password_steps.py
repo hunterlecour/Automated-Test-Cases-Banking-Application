@@ -2,8 +2,8 @@ from behave import given, when, then
 
 
 @when('Click Change Password')
-def click_change_customer(context):
-    context.app.password_page.click_edit_customer()
+def click_change_password(context):
+    context.app.password_page.click_change_password()
 
 
 @when('Enter Incorrect Old Password {incorrect_input}')
