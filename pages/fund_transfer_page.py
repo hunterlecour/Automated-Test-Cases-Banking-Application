@@ -2,7 +2,8 @@ from selenium.webdriver.common.by import By
 from time import sleep
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import Page
-
+import allure
+from allure_commons.types import AttachmentType
 
 class Fund_Transfer(Page):
     FUND_TRANSFER_BUTTON = (By.CSS_SELECTOR, "ul.menusubnav [href= 'FundTransInput.php']")
@@ -22,7 +23,6 @@ class Fund_Transfer(Page):
         self.input_text('121221', *self.PAYEES_ACCOUNT_FIELD)
         self.input_text('500', *self.AMOUNT_FIELD)
         self.input_text('cash', *self.DESCRIPTION_FIELD)
-        sleep(2)
 
     def click_submit(self):
         self.click(*self.SUBMIT_BUTTON)
@@ -32,24 +32,23 @@ class Fund_Transfer(Page):
         self.input_text('121221', *self.PAYEES_ACCOUNT_FIELD)
         self.input_text('500', *self.AMOUNT_FIELD)
         self.input_text('cash', *self.DESCRIPTION_FIELD)
-        sleep(2)
 
     def verify_fund_transfer(self):
         text = self.driver.find_element(*self.FUND_TRANSFER_DETAILS).text
         assert text == "Fund Transfer Details"
         # Taking Screenshot
-        self.driver.get_screenshot_as_file('images/fund-transfer-1.png')
+        allure.attach(self.driver.get_screenshot_as_png(), name='fund-transfer-1.png', attachment_type=AttachmentType.PNG)
 
 
     def verify_transfer_page(self):
         self.driver.refresh()
-        sleep(5)
         alert = self.driver.wait.until(EC.alert_is_present())
         alert.accept()
         refreshed_page_text = self.driver.find_element(*self.REFRESH_FUND_TRANSFER_DETAILS).text
         assert refreshed_page_text == "Fund transfer"
         # Taking Screenshot
-        self.driver.get_screenshot_as_file('images/fund-transfer-2.png')
+        allure.attach(self.driver.get_screenshot_as_png(), name='fund-transfer-2.png',
+                      attachment_type=AttachmentType.PNG)
         self.driver.quit()
 
 

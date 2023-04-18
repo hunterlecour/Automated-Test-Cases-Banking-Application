@@ -37,11 +37,13 @@ Each Test Case Scenario represents a Test Case I tested to assure efficiency of 
 
 ## How To Read This Project
 
-In addition to my work, I have created a [google worksheet](https://docs.google.com/spreadsheets/d/1PrIcX9j7LpSn9HRZY7WYv6VZ7k4RD8t79Z0fxLG8rU4/edit?usp=sharing) where I share my customized Test Case reports on the tests I executed for this project. Actual and expected results included 
+In addition to my work, I have created a [google worksheet](https://docs.google.com/spreadsheets/d/1PrIcX9j7LpSn9HRZY7WYv6VZ7k4RD8t79Z0fxLG8rU4/edit?usp=sharing) where I share my customized Bug Reports on the tests I executed for this project. Actual and expected results included. 
 
-Viewers have an option to read my Bug Reports while analyzing through each Test Case Scenario to give better persective on what they're viewing.
+Viewers have an option to read my Bug Reports while analyzing through each Test Case Scenario to give better perspective on what they're viewing.
 
 I provide detail in steps and indentify my process through successful test cases and/or unsuccessful test cases.
+
+I have also provided the results of each test case scenario execution through allure. In order to see the details of each test cases on allure, you must fork the repository (to make your own), copy it to your local computer, and use the command "allure serve test_results/" in your IDE's terminal. This should present the test cases results in Allure with screenshot attachments.
 
 Since these steps will expire, its important to have an understanding of Python, Selenium, Behave, and the Page Object Model to comprehend my work.
 

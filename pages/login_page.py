@@ -1,7 +1,9 @@
+import allure
 from selenium.webdriver.common.by import By
 from time import sleep
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import Page
+from allure_commons.types import AttachmentType
 
 
 class Login(Page):
@@ -37,9 +39,8 @@ class Login(Page):
         expected_result = "Welcome To Manager's Page of Guru99 Bank"
         actual_result = self.driver.find_element(*self.ACTUAL_RESULT).text
         assert expected_result == actual_result, f'Expected {expected_result} but got actual {actual_result}'
-        sleep(1)
         # Taking Screenshot
-        self.driver.get_screenshot_as_file('images/login-test-1.png')
+        allure.attach(self.driver.get_screenshot_as_png(), name='login-test-1.png', attachment_type=AttachmentType.PNG)
 
     def verify_login_error(self):
 
@@ -47,21 +48,22 @@ class Login(Page):
         alert = self.driver.wait.until(EC.alert_is_present())
         #  Check if the alert exists
         if alert:
-            print("Alert exists")
+            print("Log in error alert exists")
         else:
-            print("Alert does not exist")
+            print("Log in error alert does not exist")
         alert.accept()
+        sleep(1)
         # Taking Screenshot
-        self.driver.get_screenshot_as_file('images/login-test-2.png')
+        allure.attach(self.driver.get_screenshot_as_png(), name='login-test-2.png', attachment_type=AttachmentType.PNG)
         self.driver.quit()
 
     def verify_logout(self):
         alert = self.driver.wait.until(EC.alert_is_present())
         actual_text = alert.text
         expected_text = 'You Have Succesfully Logged Out!!'
-        assert expected_text == actual_text,f"Expected alert text not found, but found {actual_text}"
+        assert expected_text == actual_text, f"Expected alert text not found, but found {actual_text}"
         alert.dismiss()
         # Taking Screenshot
-        self.driver.get_screenshot_as_file('images/login-test-3.png')
+        allure.attach(self.driver.get_screenshot_as_png(), name='login-test-3.png', attachment_type=AttachmentType.PNG)
         self.driver.quit()
 

@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import Page
+import allure
+from allure_commons.types import AttachmentType
 
 
 class Withdrawal(Page):
@@ -25,5 +27,6 @@ class Withdrawal(Page):
         text = self.driver.find_element(*self.WITHDRAWAL_SUCCESS).text
         assert text == "Transaction details of Withdrawal for Account 121219"
         # Taking Screenshot
-        self.driver.get_screenshot_as_file('images/withdrawal-test-1.png')
+        allure.attach(self.driver.get_screenshot_as_png(), name='withdrawal-test-1.png',
+                      attachment_type=AttachmentType.PNG)
 
