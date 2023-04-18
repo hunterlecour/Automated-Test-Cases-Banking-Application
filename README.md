@@ -43,9 +43,9 @@ Viewers have an option to read my Bug Reports while analyzing through each Test 
 
 I provide detail in steps and indentify my process through successful test cases and/or unsuccessful test cases.
 
-I have also provided the results of each test case scenario execution through allure. In order to see the details of each test cases on allure, you must fork the repository (to make your own), copy it to your local computer, and use the command "allure serve test_results/" in your IDE's terminal. This should present the test cases results in Allure with screenshot attachments.
+I have also provided the results of each test case scenario execution through Allure. In order to see the details of each test cases on Allure, you must fork the repository (to make your own), copy it to your local computer, and use the command "allure serve test_results/" in your IDE's terminal. This should present the test cases results in Allure with screenshot attachments.
 
-Since these steps will expire, its important to have an understanding of Python, Selenium, Behave, and the Page Object Model to comprehend my work.
+Since these steps will expire, it's important to have an understanding of Python, Selenium, Behave, and the Page Object Model to comprehend my work.
 
 My steps are organized in a Page Object Model in the python files here: 
 
