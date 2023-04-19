@@ -11,7 +11,7 @@ Feature: Verifying Fund Transfers
     And Click Submit
     Then Verify Fund Transfer Successful
 
-  Scenario: Verify Fund Transfer is not done again when page is reloaded
+  Scenario: Verify Fund Transfer is not executed again when page is refreshed
     Given Open Bank App
     When Enter Valid User ID mngr489998
     And Enter Valid Password tamuhUb
