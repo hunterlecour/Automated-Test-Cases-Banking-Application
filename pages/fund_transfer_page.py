@@ -19,7 +19,7 @@ class Fund_Transfer(Page):
         self.click(*self.FUND_TRANSFER_BUTTON)
 
     def correct_required_fields(self):
-        self.input_text('121219', *self.PAYERS_ACCOUNT_FIELD)
+        self.input_text('121995', *self.PAYERS_ACCOUNT_FIELD)
         self.input_text('121221', *self.PAYEES_ACCOUNT_FIELD)
         self.input_text('500', *self.AMOUNT_FIELD)
         self.input_text('cash', *self.DESCRIPTION_FIELD)

@@ -7,7 +7,7 @@ Feature: Withdrawal Functionality
     And Enter Valid Password tamuhUb
     And Click Login
     And Click Withdrawal
-    And Enter Account No 121219
+    And Enter Account No 121995
     And Enter Amount 500 dollars
     And Enter Description cash
     And Click Submit
