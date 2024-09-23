@@ -3,8 +3,8 @@ Feature: Change Password
 
   Scenario: Enter incorrect Old Password
     Given Open Bank App
-    When Enter Valid User ID mngr489998
-    And Enter Valid Password tamuhUb
+    When Enter Valid User ID mngr591312
+    And Enter Valid Password gatyvEp
     And Click Login
     And Click Change Password
     And Enter Incorrect Old Password 555%

@@ -25,7 +25,7 @@ class Withdrawal(Page):
 
     def verify_withdrawal(self):
         text = self.driver.find_element(*self.WITHDRAWAL_SUCCESS).text
-        assert text == "Transaction details of Withdrawal for Account 121995"
+        assert text == "Transaction details of Withdrawal for Account 138547"
         # Taking Screenshot
         allure.attach(self.driver.get_screenshot_as_png(), name='withdrawal-test-1.png',
                       attachment_type=AttachmentType.PNG)

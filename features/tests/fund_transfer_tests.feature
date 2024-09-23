@@ -3,8 +3,8 @@ Feature: Verifying Fund Transfers
 
   Scenario: Verify Fund Transfers
     Given Open Bank App
-    When Enter Valid User ID mngr489998
-    And Enter Valid Password tamuhUb
+    When Enter Valid User ID mngr591312
+    And Enter Valid Password gatyvEp
     And Click Login
     And Click Fund Transfer
     And Input Correct Required Fields For Fund Transfer
@@ -13,8 +13,8 @@ Feature: Verifying Fund Transfers
 
   Scenario: Verify Fund Transfer is not executed again when page is refreshed
     Given Open Bank App
-    When Enter Valid User ID mngr489998
-    And Enter Valid Password tamuhUb
+    When Enter Valid User ID mngr591312
+    And Enter Valid Password gatyvEp
     And Click Login
     And Click Fund Transfer
     And Input Correct Required Fields For Fund Transfer
@@ -23,8 +23,8 @@ Feature: Verifying Fund Transfers
 
   Scenario: Verify system when Manager enters wrong Account number during Fund Transfer
     Given Open Bank App
-    When Enter Valid User ID mngr489998
-    And Enter Valid Password tamuhUb
+    When Enter Valid User ID mngr591312
+    And Enter Valid Password gatyvEp
     And Click Login
     And Click Fund Transfer
     And Input Incorrect Required Fields For Fund Transfer
