@@ -27,7 +27,7 @@ This is because I was given access to the demo bank's website application with a
 
 The scripts created run through the website, which requires a live userid and password
 
-The feature files located here : Selenium-Project-Banking-Final/features/tests are test cases that are built using behave. Each file represents sections of the website I tested for organization purposes.
+The feature files located [here](https://github.com/hunterlecour/Automated-Test-Cases-Banking-Application/tree/main/features/tests) are test cases that are built using behave. Each file represents sections of the website I tested for organization purposes.
 
 Running each file will automate each Test Case Scenario in the specific file at once
 
@@ -47,9 +47,7 @@ I have also provided the results of each test case scenario execution through Al
 
 Since these steps will expire, it's important to have an understanding of Python, Selenium, Behave, and the Page Object Model to comprehend my work.
 
-My steps are organized in a Page Object Model in the python files here: 
-
-Selenium-Project-Banking-Final/pages
+My steps are organized in a Page Object Model in the python files [here](https://github.com/hunterlecour/Automated-Test-Cases-Banking-Application/tree/main/pages)
 
 Each file represents sections of the website I tested for organization purposes. Similarly to the feature files.
 ## How To Contribute To This Project
